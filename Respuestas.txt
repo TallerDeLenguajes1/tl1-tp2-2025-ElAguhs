@@ -4,3 +4,8 @@ Seguridad: evitás romper la versión estable del proyecto.
 Experimentacion libre:podés probar cosas nuevas sin miedo.
 Mejor trabajo en equipo:cada integrante puede trabajar en su propia rama sin pisar el trabajo de los demás. 
 La rama Opcion_2 existe, pero no la vas a ver a menos que la ejecutes.
+
+Después de ejecutar el comando
+git merge Opcion_2 -m "merge Opcion_2"
+se combinan los cambios de la rama Opcion_2 dentro de main.
+Al volver al panel de Source Control en VSCode, noto que el archivo tp2_1_2.c, que antes no aparecía en main, ahora aparece como parte del proyecto, ya que fue incorporado con el merge.
