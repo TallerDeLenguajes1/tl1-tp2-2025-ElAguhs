@@ -1,0 +1,17 @@
+// codigo a completar
+#define N 20
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int i;
+double vt[N];
+int main()
+{
+    srand(time(NULL));
+    for (i = 0; i < N; i++)
+    {
+        vt[i] = 1 + rand() % 100;
+        printf("%f\n", vt[i]);
+    }
+    return 0;
+}
