@@ -15,6 +15,8 @@ void listarPCs(struct compu pcs[], int cantidad);
 
 void mostrarMasVieja(struct compu pcs[], int cantidad);
 
+void mostrarMasVeloz(struct compu pcs[], int cantidad);
+
 int main()
 {
   srand(time(NULL));
@@ -43,6 +45,8 @@ int main()
   listarPCs(pcs, N);
 
   mostrarMasVieja(pcs, N);
+
+  mostrarMasVeloz(pcs, N);
 }
 
 void listarPCs(struct compu pcs[], int cantidad)
@@ -79,6 +83,35 @@ void mostrarMasVieja(struct compu pcs[], int cantidad)
       printf("Anio: %d, ", pcs[i].anio);
       printf("Cantidad de nucleos: %d, ", pcs[i].cantidad_nucleos);
       printf("Tipo de CPU: %s\n", pcs[i].tipo_cpu);
+      break;
     }
   }
+}
+
+void mostrarMasVeloz(struct compu pcs[], int cantidad){
+
+
+  int velocidad_mas_rapida = pcs[0].velocidad;
+
+  for (int i = 0; i < cantidad; i++)
+  {
+    if (pcs[i].velocidad >= velocidad_mas_rapida)
+    {
+      velocidad_mas_rapida = pcs[i].velocidad;
+    }
+  }
+
+  for (int i = 0; i < cantidad; i++)
+  {
+    if (pcs[i].velocidad == velocidad_mas_rapida)
+    {
+      printf("\nLa computadora mas veloz es la computadora %d:\n", i + 1 );
+      printf("Velocidad: %d GHz, ", pcs[i].velocidad);
+      printf("Anio: %d, ", pcs[i].anio);
+      printf("Cantidad de nucleos: %d, ", pcs[i].cantidad_nucleos);
+      printf("Tipo de CPU: %s\n", pcs[i].tipo_cpu);
+      break;
+    }
+  }
+ 
 }
